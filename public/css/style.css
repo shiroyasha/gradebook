@@ -1,0 +1,55 @@
+.table thead td,.table thead th
+{
+    text-align: center;
+    vertical-align: middle;
+    
+    border-bottom: 1px black solid;
+    /* border-left: 1px black dashed;
+    border-right: 1px black dashed; */
+}
+
+.siroko {
+    margin: auto;
+    text-align: center;    
+}
+
+.centriranje {
+   margin: auto; 
+}
+
+.tableCentering {
+    display: block;
+    position: relative;
+    left: 50%; 
+}
+
+#gradebookTable {
+    position: relative;
+    float: right;
+    left: -50%;
+}
+
+td span input[type="text"] {
+    margin : 0px;
+}
+
+input[type='text'].error {
+    border-color: red !important;
+    background-color: #f2dede;
+}
+
+input[type='text'].checking {
+    border-color: #fbeed6 !important;
+    background-color: #fcf8e3;
+}
+
+.table tbody td {
+    text-align: center;
+}
+
+#gradebookControls {
+    margin-bottom: 30px;
+}
+
+
+

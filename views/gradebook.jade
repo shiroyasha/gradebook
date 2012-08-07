@@ -1,0 +1,39 @@
+.page-header
+  h1= gradebook.title
+
+script(type='text/javascript', src='/javascripts/gradebookTable.js')
+  
+script(type='text/javascript')
+  var data_structure = !{ JSON.stringify(data_structure) }
+  var students_structure = !{ JSON.stringify(students_structure) }
+  var data = !{ JSON.stringify( data ) }
+  var title = !{ JSON.stringify( gradebook.title ) }
+
+script( type='text/javascript', src='/javascripts/gradebook.js')
+script( type='text/javascript', src='/bootstrap/js/bootstrap-tooltip.js')
+script( type='text/javascript', src='/javascripts/tableView.js')
+
+style()
+    td span input {
+        width: 30px;
+    }
+
+
+
+#gradebookControls.row
+  .span8
+     p= 'Timeline ------------------------------------------------'
+  .span4
+     ul.nav.nav-pills( style='float: right;')
+        li.active
+            a.gradebookControlLink( href="#", rel='view')= 'View'
+        li
+            a.gradebookControlLink( href="#", rel='edit' )= 'Edit'
+        li
+            a.gradebookControlLink( href="#", rel='structure' )= 'Structure'
+
+
+
+.row
+  #gradebookTable
+

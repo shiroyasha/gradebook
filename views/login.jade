@@ -1,0 +1,57 @@
+!!!
+link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')tyle( href='/bootstrap/css/bootstrap.css')
+
+style()
+  body {
+    padding: 100px;
+  }
+
+body.container
+    div( style=' margin-bottom: -60px; margin-left: 5px; margin-top: -80px;')
+        img( src='/images/logo3.png', style='positon: relative; left: 20px; width: 150px; heigth: 150px;')
+    
+    
+    .row
+        .span12
+            .hero-unit 
+                h1= 'Welcome to Gradebook'
+                h2= 'Please login or request a login password'
+
+    .row
+        .span6
+            form.well( method='POST', action='/requestPassword')
+                h2= 'Request a password'
+                p= 'Opis sta ce se desiti asfasdf asdf asdf asdf as dfa sdfa sd fas df asdfa sdfa sdf asdf asdf asd f asd fasdfasdfasdf  asdfasdfasd fasd'
+       
+                p
+                    label( for='name' )= 'Full name'
+                    input( type='text', name='name', placeholder='Please enter your full name' )
+
+                p
+                    label( for='index-number' )= 'Index number'
+                    input( type='text', name='index-number', placeholder='Please enter your index number' )
+
+                p
+                    label( for='email' )= 'Email'
+                    input( type='text', name='email', placeholder='Please enter email address' )
+
+
+                input.btn.btn-primary.btn-large( type= 'submit', value= 'Request password')
+
+        .span6
+            form.well( method='POST', action='/login')
+                h2= 'Login'
+                p= 'Opis sta ce se desiti asfasdf asdf asdf asdf as dfa sdfa sd fas df asdfa sdfa sdf asdf asdf asd f asd fasdfasdfasdf  asdfasdfasd fasd'
+       
+                input( type='hidden', name='redir', value= redir )
+                p
+                    label( for='username' )= 'Username'
+                    input( type='text', name='username', placeholder='Please enter your username', autofocus="autofocus" )
+
+                p
+                    label( for='password' )= 'Password'
+                    input( type='password', name='password', placeholder='Please enter your password' )
+
+                input.btn.btn-primary.btn-large( type= 'submit', value= 'Login')
+     
+    #footer!= partial('partials/footer')

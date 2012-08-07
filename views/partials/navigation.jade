@@ -1,0 +1,38 @@
+style()
+    body {
+        padding-top: 90px;
+    }
+
+.navbar.navbar-fixed-top
+    .navbar-inner
+        .container
+            a( class='brand', href='/')= navigation.brand
+          
+            ul.nav
+                - each l in navigation.links
+                    li( class= l.active ? "active" : "" )
+                      a( href= l.path )= l.name
+
+                li
+                  span= navigation.someTitle
+
+
+            ul.nav.pull-right
+                li.dropdown( class= navigation.gradebooks.active ? "active" : "" )
+                    a( href='#', class='dropdown-toogle', data-toggle='dropdown')
+                        span= navigation.gradebooks.name
+                        b.caret
+
+                    ul.dropdown-menu
+                        - each l in navigation.gradebooks.links
+                            a( href= '/gradebook/' + l.id )
+                                span= l.name
+
+          
+                li( class= navigation.profile.active ? "active" : "" )
+                    a(href='/profile')
+                        i.icon-user.icon-white
+                        span= " " + navigation.profile.username
+                li
+                    a(href='/logout')= navigation.logout.name
+

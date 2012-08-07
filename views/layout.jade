@@ -1,0 +1,27 @@
+!!!
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
+
+
+    script(src='/javascripts/jquery-1.7.2.min.js')
+    script(src='/bootstrap/js/bootstrap-dropdown.js')
+
+    script(type='javascript')
+      $('.dropdown-toggle').dropdown();
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+
+  body
+    - if( flash.warn )
+      p.warning!= flash.warn
+
+    #navigation!= partial('partials/navigation')
+       
+    #body.container!= body
+        
+      #footer!= partial('partials/footer')
+
+
