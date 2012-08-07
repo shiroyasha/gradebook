@@ -1,7 +1,5 @@
 .page-header
   h1= gradebook.title
-
-script(type='text/javascript', src='/javascripts/gradebookTable.js')
   
 script(type='text/javascript')
   var data_structure = !{ JSON.stringify(data_structure) }
@@ -9,9 +7,11 @@ script(type='text/javascript')
   var data = !{ JSON.stringify( data ) }
   var title = !{ JSON.stringify( gradebook.title ) }
 
-script( type='text/javascript', src='/javascripts/gradebook.js')
+script( type='text/javascript', src='/js/gradebook/main.js')
+script( type='text/javascript', src='/js/gradebook/tableModel.js')
+script( type='text/javascript', src='/js/gradebook/tableView.js')
+
 script( type='text/javascript', src='/bootstrap/js/bootstrap-tooltip.js')
-script( type='text/javascript', src='/javascripts/tableView.js')
 
 style()
     td span input {
@@ -22,7 +22,9 @@ style()
 
 #gradebookControls.row
   .span8
-     p= 'Timeline ------------------------------------------------'
+     label( value='Time', for='timeline' )
+     input( id= 'timeline', type='text' )
+
   .span4
      ul.nav.nav-pills( style='float: right;')
         li.active
@@ -35,5 +37,6 @@ style()
 
 
 .row
-  #gradebookTable
+  .tableCentering
+    #gradebookTable
 

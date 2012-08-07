@@ -8,15 +8,6 @@
     border-right: 1px black dashed; */
 }
 
-.siroko {
-    margin: auto;
-    text-align: center;    
-}
-
-.centriranje {
-   margin: auto; 
-}
-
 .tableCentering {
     display: block;
     position: relative;
@@ -25,12 +16,16 @@
 
 #gradebookTable {
     position: relative;
-    float: right;
+    float: left;
     left: -50%;
 }
 
-td span input[type="text"] {
+
+
+
+td input[type="text"] {
     margin : 0px;
+    width : 40px;
 }
 
 input[type='text'].error {

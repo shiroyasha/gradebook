@@ -130,6 +130,14 @@ var DataModel = function(gradebookID, periodID, structure, data) {
             return data[index.i].values[index.j];
         },
 
+        getStructure: function() {
+            return structure;
+        },
+
+        getGradebookName: function() {
+            return "Baze podataka 1";
+        },
+
         getPath : getPath,
     
         setData: function( index , value, f ) {

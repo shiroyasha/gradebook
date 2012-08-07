@@ -4,7 +4,6 @@
  */
 
 var express = require('express')
-  , routes = require('./routes')
   , gradebook = require('./data/gradebook');
 
 var app = module.exports = express.createServer();
@@ -22,10 +21,6 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
 
 });
-
-
-
-
 
 app.dynamicHelpers(
     {

@@ -67,7 +67,10 @@ var TableView = function( model ) {
     }
 
     function createTable( edit ) {
-        return "<table class='table table-bordered'><thead>" + createHeader() + "</thead><tbody>" + ( edit ? createEditBody() : createViewBody() ) + "</tbody></table>";
+        return "<table class='table table-bordered'>" + 
+                   "<thead>" + createHeader() + "</thead>" +
+                   "<tbody>" + ( edit ? createEditBody() : createViewBody() ) + "</tbody>" + 
+               "</table>";
     }
 
     function getIndex( e ) {
@@ -145,9 +148,38 @@ var TableView = function( model ) {
         });
     }
 
+    function createTree() {
+
+        function create( s ) {
+            if( s.structure == [] ) return "";
+            
+            var rez = "<ul>";
+            
+            for( var i = 0; i < s.length ; i++) {
+                rez += "<li>";
+                rez += "<h2>" + s[i].properties.name + "</h2>";
+                rez += "<a href='#'>rename </a>";
+                rez += "<a href='#'>add parent </a>";
+                rez += "<a href='#'>add child</a>"; 
+                rez += create( s[i].structure );
+                rez += "</li>"; 
+            }
+            rez += "</ul>"; 
+
+            return rez;
+        }
+        
+        return "<ul>" + 
+                 "<h1>" + model.getGradebookName() + "</h1>" +
+                 "<a href='#'>rename </a>" +
+                 "<a href='#'>add child</a>" +
+                 create( model.getStructure().slice(2) ) +
+               "</ul>";
+
+    }
 
     var View = {
-        render : function( element ) {
+        renderView : function( element ) {
             var table = createTable(false);
 
             $( element ).html( table );
@@ -161,7 +193,14 @@ var TableView = function( model ) {
 
             setChangeAction();
             setKeyoardNavigation();
-        }   
+        },
+
+        renderStructure: function( element ) {
+            var tree = createTree();
+            console.log(tree);
+            $( element ).html(tree);
+
+        }
     };
 
     return View;
